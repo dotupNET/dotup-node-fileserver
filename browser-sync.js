@@ -22,18 +22,27 @@ var config = require(configFile);
 //   return true;
 // }
 
+var bs = require("browser-sync").create();
+var serveIndex = require('serve-index');
+
+bs.init({
+  server: config.dir
+}, function (err, bs) {
+    bs.addMiddleware('', serveIndex(config.dir))
+});
+
 // The express.static serves the file contents
 // The serveIndex is this module serving the directory
-app.use(
-  '/',
-  express.static(config.dir),
-  serveIndex(config.dir,
-    {
-      'icons': true
-      // "filter": filter,
-      // "template": "public/directory.html"
-    }
-  ))
+// app.use(
+//   '/',
+//   express.static(config.dir),
+//   serveIndex(config.dir,
+//     {
+//       'icons': true
+//       // "filter": filter,
+//       // "template": "public/directory.html"
+//     }
+//   ))
 
-// Listen
-app.listen(config.port || 3000)
+// // Listen
+// app.listen(config.port || 3000)
