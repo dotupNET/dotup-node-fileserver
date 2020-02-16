@@ -12,6 +12,9 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "bin": {
+    "dotup-node-fileserver": "app.js"
+  },
   "dependencies": {
     "express": "~4.16.1",
     "serve-index": "1.9.1"
