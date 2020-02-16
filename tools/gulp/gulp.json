@@ -1,0 +1,12 @@
+{
+  "lambda": false,
+  "build": false,
+  "docs": false,
+  "mocha": false,
+  "tslint": false,
+  "watch": false,
+  "yogen": false,
+  "npm": true,
+  "statics": false,
+  "skill": false
+}
