@@ -1,0 +1,16 @@
+[Unit]
+Description=dotup-node-fileserver
+After=network.target
+[Service]
+ExecStart=/usr/bin/node /home/pi/src/dotup-node-fileserver/app.js
+
+Restart=always
+RestartSec=5
+TimeoutStartSec=5
+User=pi
+Group=pi
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/home/pi/src/dotup-node-fileserver
+[Install]
+WantedBy=multi-user.target
